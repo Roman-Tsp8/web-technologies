@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Schedule</title>
+    <style>
+      ul {
+        list-style-type: "*";
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      .main {
+        width: 700px;
+        margin: 0 auto;
+        border: 2px solid #1a3acb;
+        padding: 15px;
+      }
+      .block {
+        border: 2px solid #8888ff;
+        margin: 10px 0;
+        padding: 8px;
+      }
+      .block-item {
+        margin-left: 10px;
+      }
+      .pic {
+        text-align: center;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 2px solid black;
+        padding: 6px;
+      }
+      th {
+        text-align: left;
+      }
+      .work th {
+        background: #cfe8ff;
+      }
+      .work td {
+        background: #f0f8ff;
+      }
+      .rest th {
+        background: #ffd9b3;
+      }
+      .rest td {
+        background: #fff4e6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Weekdays:</h1>
+
+      <div class="block">
+        <ul>
+          <li class="block-item"><a href="#mon">Monday</a></li>
+          <li class="block-item"><a href="#tue">Tuesday</a></li>
+          <li class="block-item"><a href="#wed">Wednesday</a></li>
+          <li class="block-item"><a href="#thu">Thursday</a></li>
+          <li class="block-item"><a href="#fri">Friday</a></li>
+          <li class="block-item"><a href="#sat">Saturday</a></li>
+          <li class="block-item"><a href="#sun">Sunday</a></li>
+        </ul>
+      </div>
+
+      <div class="block work" id="mon">
+        <table>
+          <tr>
+            <th colspan="3">Monday</th>
+          </tr>
+          <tr>
+            <td>Classes</td>
+            <td>1-st week</td>
+            <td>2-nd week</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>Advanced Math</td>
+            <td>Object oriented programming</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Discrete Math</td>
+            <td>Operating Systems</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Web technologies</td>
+            <td>—</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+
+      <div class="block work" id="tue">
+        <table>
+          <tr>
+            <th colspan="3">Tuesday</th>
+          </tr>
+          <tr>
+            <td>Classes</td>
+            <td>1-st week</td>
+            <td>2-nd week</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>...</td>
+            <td>English for professional use</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Databases NoSQL</td>
+            <td>Web technologies</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+
+      <div class="block work" id="wed">
+        <table>
+          <tr>
+            <th colspan="3">Wednesday</th>
+          </tr>
+          <tr>
+            <td>Classes</td>
+            <td>1-й тиждень</td>
+            <td>2-й тиждень</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+
+      <div class="block work" id="thu">
+        <table>
+          <tr>
+            <th colspan="3">Четвер</th>
+          </tr>
+          <tr>
+            <td>Пара</td>
+            <td>1-й тиждень</td>
+            <td>2-й тиждень</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+
+      <div class="block work" id="fri">
+        <table>
+          <tr>
+            <th colspan="3">П'ятниця</th>
+          </tr>
+          <tr>
+            <td>Пара</td>
+            <td>1-й тиждень</td>
+            <td>2-й тиждень</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>...</td>
+            <td>...</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+
+      <div class="block rest" id="sat">
+        <table>
+          <tr>
+            <th colspan="2">Субота</th>
+          </tr>
+          <tr>
+            <td>Час</td>
+            <td>Заняття</td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td>...</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+
+      <div class="block rest" id="sun">
+        <table>
+          <tr>
+            <th colspan="2">Неділя</th>
+          </tr>
+          <tr>
+            <td>Час</td>
+            <td>Заняття</td>
+          </tr>
+          <tr>
+            <td>10:00</td>
+            <td>...</td>
+          </tr>
+          <tr>
+            <td>16:00</td>
+            <td>...</td>
+          </tr>
+        </table>
+      </div>
+      <div class="block pic">
+        <img src="pic1.jpg" width="400" height="400" alt="Картинка" />
+      </div>
+    </div>
+  </body>
+</html>
