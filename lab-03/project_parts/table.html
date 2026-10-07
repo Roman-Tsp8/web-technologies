@@ -1,67 +1,60 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=
-    , initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Display table</title>
-    <style>
+    <style type="text/css">
       table {
-        border: 2px solid black;
         border-collapse: collapse;
+        width: 400px;
       }
       td {
-        width: 80px;
-        height: 80px;
-        border: 1px solid black;
+        border: 5px solid #000;
       }
-      .t {
-        background: #2fffd2;
-      }
-      .c {
-        background: #ffffcc;
+      tr {
+        width: 60px;
+        height: 60px;
       }
     </style>
   </head>
   <body>
-    <div style="text-align: center">
+    <div align="center">
       <a href="../index.html">Повернутись на головну</a>
     </div>
-    <table>
+
+    <table align="center">
       <tr>
-        <td class="t" colspan="8"></td>
+        <td colspan="8" bgcolor="#2fffd2"><br /></td>
       </tr>
       <tr>
-        <td class="c" rowspan="6"></td>
-        <td class="t" colspan="6"></td>
-        <td class="t" rowspan="6"></td>
+        <td rowspan="6" bgcolor="#ffffcc"><br /></td>
+        <td colspan="6" bgcolor="#2fffd2"><br /></td>
+        <td rowspan="6" bgcolor="#ffffcc"><br /></td>
       </tr>
       <tr>
-        <td class="c" rowspan="4"></td>
-        <td class="t" colspan="4"></td>
-        <td class="c" rowspan="4"></td>
+        <td rowspan="4" bgcolor="#ffffcc"><br /></td>
+        <td colspan="4" bgcolor="#2fffd2"><br /></td>
+        <td rowspan="4" bgcolor="#ffffcc"><br /></td>
       </tr>
       <tr>
-        <td class="c" rowspan="2"></td>
-        <td style="background: red"></td>
-        <td style="background: blue"></td>
-        <td class="c" rowspan="2"></td>
+        <td rowspan="2" bgcolor="#ffffcc"><br /></td>
+        <td bgcolor="#ff0000"><br /></td>
+        <td bgcolor="#0000ff"><br /></td>
+        <td rowspan="2" bgcolor="#ffffcc"><br /></td>
       </tr>
       <tr>
-        <td style="background: lime"></td>
-        <td style="background: yellow"></td>
+        <td bgcolor="#00ff00"><br /></td>
+        <td bgcolor="#ffff00"><br /></td>
       </tr>
       <tr>
-        <td class="t" colspan="4"></td>
+        <td colspan="4" bgcolor="#2fffd2"><br /></td>
       </tr>
       <tr>
-        <td class="t" colspan="6"></td>
+        <td colspan="6" bgcolor="#2fffd2"><br /></td>
       </tr>
       <tr>
-        <td class="t" colspan="8"></td>
+        <td colspan="8" bgcolor="#2fffd2"><br /></td>
       </tr>
     </table>
   </body>
