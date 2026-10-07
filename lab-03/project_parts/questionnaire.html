@@ -2,269 +2,286 @@
 <html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Анкета</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      form {
-        width: 600px;
-        margin: 0 auto;
-      }
-      fieldset {
-        margin-bottom: 15px;
-      }
-      label {
-        display: block;
-        margin-top: 8px;
-      }
-      label.inline {
-        display: inline;
-        margin-right: 10px;
-      }
-      input[type="text"],
-      input[type="password"],
-      input[type="email"],
-      input[type="tel"],
-      textarea,
-      select {
-        width: 100%;
-        box-sizing: border-box;
-      }
-      .back {
-        text-align: center;
-        margin: 15px;
-      }
-    </style>
   </head>
   <body>
-    <div class="back"><a href="../index.html">Повернутись на головну</a></div>
+    <div align="center">
+      <a href="../index.html">Повернутись на головну</a>
+      <br /><br />
 
-    <form action="" method="get">
-      <fieldset>
-        <legend>Особисті дані</legend>
+      <div align="left">
+        <!-- Для демонстрації: спершу method="get", потім змінити на
+             method="post" enctype="multipart/form-data" -->
+        <form action="" method="get">
+          <fieldset>
+            <legend>Особисті дані</legend>
 
-        <label for="fullname">Ім'я та прізвище</label>
-        <input
-          type="text"
-          id="fullname"
-          name="fullname"
-          value=""
-          placeholder="Іван Петренко"
-          required
-          tabindex="1"
-        />
+            <label for="fullname">Ім'я та прізвище</label><br />
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              value=""
+              size="40"
+              placeholder="Іван Петренко"
+              required
+              tabindex="1"
+            />
+            <br />
 
-        <label for="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value=""
-          placeholder="name@example.com"
-          autocomplete="off"
-          required
-          tabindex="2"
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          title="Формат: name@example.com"
-        />
+            <label for="email">Email</label><br />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value=""
+              size="40"
+              placeholder="name@example.com"
+              autocomplete="off"
+              required
+              tabindex="2"
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              title="Формат: name@example.com"
+            />
+            <br />
 
-        <label for="phone">Мобільний номер</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value=""
-          placeholder="+380501234567"
-          tabindex="3"
-          pattern="\+380\d{9}"
-          title="Формат: +380XXXXXXXXX"
-        />
+            <label for="phone">Мобільний номер</label><br />
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value=""
+              size="40"
+              placeholder="+380501234567"
+              tabindex="3"
+              pattern="\+380\d{9}"
+              title="Формат: +380XXXXXXXXX"
+            />
+            <br />
 
-        <label for="pass">Пароль</label>
-        <input
-          type="password"
-          id="pass"
-          name="password"
-          value=""
-          placeholder="6 символів: A-z, 0-9"
-          required
-          tabindex="4"
-          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}"
-          title="Рівно 6 символів: хоча б одна велика літера, одна мала й одна цифра"
-        />
+            <label for="pass">Пароль</label><br />
+            <input
+              type="password"
+              id="pass"
+              name="password"
+              value=""
+              size="40"
+              placeholder="6 символів: A-z, 0-9"
+              required
+              tabindex="4"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}"
+              title="Рівно 6 символів: хоча б одна велика літера, одна мала й одна цифра"
+            />
+            <br />
 
-        <label for="birth">Дата народження</label>
-        <input type="date" id="birth" name="birth" value="" tabindex="5" />
-      </fieldset>
+            <label for="birth">Дата народження</label><br />
+            <input type="date" id="birth" name="birth" value="" tabindex="5" />
+          </fieldset>
 
-      <fieldset>
-        <legend>Уподобання</legend>
+          <br />
 
-        <p>Рівень досвіду в HTML:</p>
-        <input
-          type="radio"
-          id="l1"
-          name="level"
-          value="beginner"
-          tabindex="6"
-        />
-        <label class="inline" for="l1">Початківець</label>
-        <input type="radio" id="l2" name="level" value="middle" tabindex="7" />
-        <label class="inline" for="l2">Середній</label>
-        <input
-          type="radio"
-          id="l3"
-          name="level"
-          value="advanced"
-          tabindex="8"
-        />
-        <label class="inline" for="l3">Просунутий</label>
+          <fieldset>
+            <legend>Уподобання</legend>
 
-        <p>Формат навчання:</p>
-        <input type="radio" id="f1" name="format" value="online" tabindex="9" />
-        <label class="inline" for="f1">Онлайн</label>
-        <input
-          type="radio"
-          id="f2"
-          name="format"
-          value="offline"
-          tabindex="10"
-        />
-        <label class="inline" for="f2">Офлайн</label>
-        <input
-          type="radio"
-          id="f3"
-          name="format"
-          value="hybrid"
-          checked
-          tabindex="11"
-        />
-        <label class="inline" for="f3">Гібрид</label>
+            <p>Рівень досвіду в HTML:</p>
+            <input
+              type="radio"
+              id="l1"
+              name="level"
+              value="beginner"
+              tabindex="6"
+            />
+            <label for="l1">Початківець</label>
+            <input
+              type="radio"
+              id="l2"
+              name="level"
+              value="middle"
+              tabindex="7"
+            />
+            <label for="l2">Середній</label>
+            <input
+              type="radio"
+              id="l3"
+              name="level"
+              value="advanced"
+              tabindex="8"
+            />
+            <label for="l3">Просунутий</label>
 
-        <p>Цікаві теми:</p>
-        <input
-          type="checkbox"
-          id="t1"
-          name="topics"
-          value="html"
-          tabindex="12"
-        />
-        <label class="inline" for="t1">HTML</label>
-        <input
-          type="checkbox"
-          id="t2"
-          name="topics"
-          value="css"
-          tabindex="13"
-        />
-        <label class="inline" for="t2">CSS</label>
-        <input type="checkbox" id="t3" name="topics" value="js" tabindex="14" />
-        <label class="inline" for="t3">JavaScript</label>
-        <input
-          type="checkbox"
-          id="t4"
-          name="topics"
-          value="backend"
-          tabindex="15"
-        />
-        <label class="inline" for="t4">Backend</label>
-      </fieldset>
+            <p>Формат навчання:</p>
+            <input
+              type="radio"
+              id="f1"
+              name="format"
+              value="online"
+              tabindex="9"
+            />
+            <label for="f1">Онлайн</label>
+            <input
+              type="radio"
+              id="f2"
+              name="format"
+              value="offline"
+              tabindex="10"
+            />
+            <label for="f2">Офлайн</label>
+            <input
+              type="radio"
+              id="f3"
+              name="format"
+              value="hybrid"
+              checked
+              tabindex="11"
+            />
+            <label for="f3">Гібрид</label>
 
-      <fieldset>
-        <legend>Списки</legend>
+            <p>Цікаві теми:</p>
+            <input
+              type="checkbox"
+              id="t1"
+              name="topics"
+              value="html"
+              tabindex="12"
+            />
+            <label for="t1">HTML</label>
+            <input
+              type="checkbox"
+              id="t2"
+              name="topics"
+              value="css"
+              tabindex="13"
+            />
+            <label for="t2">CSS</label>
+            <input
+              type="checkbox"
+              id="t3"
+              name="topics"
+              value="js"
+              tabindex="14"
+            />
+            <label for="t3">JavaScript</label>
+            <input
+              type="checkbox"
+              id="t4"
+              name="topics"
+              value="backend"
+              tabindex="15"
+            />
+            <label for="t4">Backend</label>
+          </fieldset>
 
-        <label for="city">Місто (одне значення, третє за замовчуванням)</label>
-        <select id="city" name="city" tabindex="16">
-          <option value="kyiv">Київ</option>
-          <option value="lviv">Львів</option>
-          <option value="chernivtsi" selected>Чернівці</option>
-          <option value="odesa">Одеса</option>
-          <option value="kharkiv">Харків</option>
-        </select>
+          <br />
 
-        <label for="langs">Мови програмування (Ctrl + клік)</label>
-        <select id="langs" name="langs" multiple size="6" tabindex="17">
-          <option value="js">JavaScript</option>
-          <option value="py">Python</option>
-          <option value="java">Java</option>
-          <option value="cs">C#</option>
-          <option value="go">Go</option>
-          <option value="rs">Rust</option>
-        </select>
+          <fieldset>
+            <legend>Списки</legend>
 
-        <label for="food">Улюблена їжа (групи)</label>
-        <select id="food" name="food" tabindex="18">
-          <optgroup label="Фрукти">
-            <option value="apple">Яблуко</option>
-            <option value="pear">Груша</option>
-            <option value="plum">Слива</option>
-          </optgroup>
-          <optgroup label="Овочі">
-            <option value="carrot">Морква</option>
-            <option value="potato">Картопля</option>
-            <option value="cabbage">Капуста</option>
-          </optgroup>
-          <optgroup label="Напої">
-            <option value="tea">Чай</option>
-            <option value="coffee">Кава</option>
-            <option value="juice">Сік</option>
-          </optgroup>
-          <optgroup label="Десерти">
-            <option value="cake">Торт</option>
-            <option value="icecream">Морозиво</option>
-            <option value="cookie">Печиво</option>
-          </optgroup>
-        </select>
+            <label for="city"
+              >Місто (одне значення, третє за замовчуванням)</label
+            ><br />
+            <select id="city" name="city" tabindex="16">
+              <option value="kyiv">Київ</option>
+              <option value="lviv">Львів</option>
+              <option value="chernivtsi" selected>Чернівці</option>
+              <option value="odesa">Одеса</option>
+              <option value="kharkiv">Харків</option>
+            </select>
+            <br /><br />
 
-        <label for="browser">Браузер (з підказками)</label>
-        <input
-          type="text"
-          id="browser"
-          name="browser"
-          value=""
-          list="browsers"
-          placeholder="Почни вводити..."
-          tabindex="19"
-        />
-        <datalist id="browsers">
-          <option value="Chrome"></option>
-          <option value="Firefox"></option>
-          <option value="Edge"></option>
-          <option value="Safari"></option>
-          <option value="Opera"></option>
-        </datalist>
-      </fieldset>
+            <label for="langs">Мови програмування (Ctrl + клік)</label><br />
+            <select id="langs" name="langs" multiple size="6" tabindex="17">
+              <option value="js">JavaScript</option>
+              <option value="py">Python</option>
+              <option value="java">Java</option>
+              <option value="cs">C#</option>
+              <option value="go">Go</option>
+              <option value="rs">Rust</option>
+            </select>
+            <br /><br />
 
-      <fieldset>
-        <legend>Додатково</legend>
+            <label for="food">Улюблена їжа (групи)</label><br />
+            <select id="food" name="food" tabindex="18">
+              <optgroup label="Фрукти">
+                <option value="apple">Яблуко</option>
+                <option value="pear">Груша</option>
+                <option value="plum">Слива</option>
+              </optgroup>
+              <optgroup label="Овочі">
+                <option value="carrot">Морква</option>
+                <option value="potato">Картопля</option>
+                <option value="cabbage">Капуста</option>
+              </optgroup>
+              <optgroup label="Напої">
+                <option value="tea">Чай</option>
+                <option value="coffee">Кава</option>
+                <option value="juice">Сік</option>
+              </optgroup>
+              <optgroup label="Десерти">
+                <option value="cake">Торт</option>
+                <option value="icecream">Морозиво</option>
+                <option value="cookie">Печиво</option>
+              </optgroup>
+            </select>
+            <br /><br />
 
-        <label for="about">Про себе</label>
-        <textarea
-          id="about"
-          name="about"
-          rows="4"
-          placeholder="Розкажіть коротко про себе"
-          tabindex="20"
-        ></textarea>
+            <label for="browser">Браузер (з підказками)</label><br />
+            <input
+              type="text"
+              id="browser"
+              name="browser"
+              value=""
+              size="40"
+              list="browsers"
+              placeholder="Почни вводити..."
+              tabindex="19"
+            />
+            <datalist id="browsers">
+              <option value="Chrome"></option>
+              <option value="Firefox"></option>
+              <option value="Edge"></option>
+              <option value="Safari"></option>
+              <option value="Opera"></option>
+            </datalist>
+          </fieldset>
 
-        <label for="audio">Аудіофайли (можна кілька)</label>
-        <input
-          type="file"
-          id="audio"
-          name="audio"
-          accept="audio/*"
-          multiple
-          tabindex="21"
-        />
-      </fieldset>
+          <br />
 
-      <button type="submit" name="send" value="send" tabindex="22">
-        Надіслати
-      </button>
-      <button type="reset" name="clear" value="clear" tabindex="23">
-        Очистити
-      </button>
-    </form>
+          <fieldset>
+            <legend>Додатково</legend>
+
+            <label for="about">Про себе</label><br />
+            <textarea
+              id="about"
+              name="about"
+              rows="4"
+              cols="40"
+              placeholder="Розкажіть коротко про себе"
+              tabindex="20"
+            ></textarea>
+            <br /><br />
+
+            <label for="audio">Аудіофайли (можна кілька)</label><br />
+            <input
+              type="file"
+              id="audio"
+              name="audio"
+              accept="audio/*"
+              multiple
+              tabindex="21"
+            />
+          </fieldset>
+
+          <br />
+
+          <button type="submit" name="send" value="send" tabindex="22">
+            Надіслати
+          </button>
+          <button type="reset" name="clear" value="clear" tabindex="23">
+            Очистити
+          </button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
