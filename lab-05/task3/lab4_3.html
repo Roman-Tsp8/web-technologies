@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторна робота №5 — Завдання 3</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="#" method="post">
+      <h1>Анкета студента</h1>
+
+      <fieldset>
+        <legend>Особисті дані</legend>
+        <p>
+          <label>Прізвище та ім’я: <input type="text" name="name" /></label>
+        </p>
+        <p>
+          <label>Email: <input type="email" name="email" /></label>
+        </p>
+        <p>
+          <label>Дата народження: <input type="date" name="birth" /></label>
+        </p>
+        <p>
+          Стать:
+          <label><input type="radio" name="gender" value="m" /> чоловіча</label>
+          <label><input type="radio" name="gender" value="f" /> жіноча</label>
+        </p>
+      </fieldset>
+
+      <fieldset>
+        <legend>Навчання та інтереси</legend>
+        <p>
+          <label
+            >Курс:
+            <select name="course">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select></label
+          >
+        </p>
+        <p>
+          Інтереси:
+          <label><input type="checkbox" name="i1" /> Веб-розробка</label>
+          <label><input type="checkbox" name="i2" /> Java</label>
+          <label><input type="checkbox" name="i3" /> Бази даних</label>
+        </p>
+        <p>
+          <label
+            >Про себе:<br /><textarea
+              name="about"
+              rows="4"
+              cols="40"
+            ></textarea>
+          </label>
+        </p>
+      </fieldset>
+
+      <p>
+        <button type="submit">Надіслати</button>
+        <button type="reset">Очистити</button>
+      </p>
+    </form>
+  </body>
+</html>
