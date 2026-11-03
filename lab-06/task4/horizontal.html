@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 4 — горизонтальна навігація</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        body {
+            margin: 0;
+            padding-top: 56px; /* місце під fixed-панель */
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f3f3;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* ---------- Панель: fixed угорі сторінки ---------- */
+        .topnav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 56px;
+            background-color: #555;
+            z-index: 100;
+        }
+
+        /* clearfix для float-елементів */
+        .menu:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .menu-item {
+            position: relative;
+            float: left;
+        }
+
+        /* Останній пункт — праворуч (float: right) */
+        .menu-item--right {
+            float: right;
+        }
+
+        .menu-item > a {
+            display: block;
+            width: 110px;
+            height: 56px;
+            line-height: 56px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-item .material-icons {
+            vertical-align: middle;
+            font-size: 28px;
+        }
+
+        /* Активний пункт */
+        .menu-item.is-active > a {
+            background-color: #4caf50;
+        }
+
+        .menu-item:hover > a {
+            background-color: #777;
+        }
+
+        .menu-item.is-active:hover > a {
+            background-color: #43a047;
+        }
+
+        /* ---------- Випадні списки (рівні 2 і 3) ---------- */
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 200px;
+            background-color: #666;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Панель, що притискається до правого краю, відкриває списки вліво */
+        .menu-item--right > .submenu {
+            left: auto;
+            right: 0;
+        }
+
+        .submenu li {
+            position: relative;
+        }
+
+        .submenu a {
+            display: block;
+            padding: 12px 16px;
+            color: white;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .submenu a:hover {
+            background-color: #888;
+        }
+
+        .submenu .is-active > a {
+            background-color: #4caf50;
+        }
+
+        /* Третій рівень відкривається збоку від другого */
+        .submenu .submenu {
+            top: 0;
+            left: 100%;
+        }
+
+        .menu-item--right .submenu .submenu {
+            left: auto;
+            right: 100%;
+        }
+
+        /* Стрілка біля пунктів з вкладеним списком */
+        .submenu .has-sub > a:after {
+            content: '›';
+            float: right;
+            margin-left: 12px;
+        }
+
+        .menu-item:hover > .submenu,
+        .submenu li:hover > .submenu {
+            display: block;
+        }
+
+        /* ---------- Липка (sticky) панель під головною ---------- */
+        .sticky-bar {
+            position: sticky;
+            top: 56px;
+            padding: 12px 20px;
+            background-color: #e0e0e0;
+            border-bottom: 2px solid #bbb;
+            z-index: 50;
+            font-weight: 700;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <nav class="topnav">
+        <ul class="menu">
+            <li class="menu-item is-active">
+                <a href="#" title="Головна"><span class="material-icons">home</span></a>
+            </li>
+            <li class="menu-item">
+                <a href="#" title="Пошук"><span class="material-icons">search</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Пошук за назвою</a></li>
+                    <li class="has-sub">
+                        <a href="#">Розширений пошук</a>
+                        <ul class="submenu">
+                            <li><a href="#">За датою</a></li>
+                            <li class="has-sub">
+                                <a href="#">За категорією</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Новини</a></li>
+                                    <li><a href="#">Статті</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a href="#" title="Пошта"><span class="material-icons">email</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Вхідні</a></li>
+                    <li><a href="#">Надіслані</a></li>
+                </ul>
+            </li>
+            <li class="menu-item menu-item--right">
+                <a href="#" title="Профіль"><span class="material-icons">account_circle</span></a>
+                <ul class="submenu">
+                    <li><a href="#">Налаштування</a></li>
+                    <li class="has-sub">
+                        <a href="#">Мова</a>
+                        <ul class="submenu">
+                            <li><a href="#">Українська</a></li>
+                            <li><a href="#">English</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Вийти</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="sticky-bar">Липка (sticky) панель: прилипає під головним меню під час прокручування</div>
+
+    <div class="content">
+        <h1>Горизонтальна навігація</h1>
+        <p>Прокрутіть сторінку: головна панель закріплена (position: fixed), а сірий рядок під нею прилипає (position: sticky).</p>
+        <p>Наведіть курсор на пункти меню, щоб побачити три рівні вкладеності.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+</body>
+</html>

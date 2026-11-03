@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання 4 — вертикальна навігація</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <style>
+      body {
+        margin: 0;
+        margin-left: 220px;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f3f3f3;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .sidenav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 220px;
+        height: 100%;
+        background-color: #0066b3;
+        z-index: 100;
+      }
+
+      .sidenav li {
+        position: relative;
+      }
+
+      .sidenav a {
+        display: block;
+        padding: 14px 16px;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      }
+
+      .sidenav .material-icons {
+        vertical-align: middle;
+        margin-right: 12px;
+        font-size: 22px;
+      }
+
+      .sidenav a:hover {
+        background-color: #0a82d6;
+      }
+
+      .sidenav .is-active > a {
+        background-color: #003f70;
+      }
+
+      .submenu {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 200px;
+        background-color: #0a7ccc;
+        box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .has-sub:hover > .submenu {
+        display: block;
+      }
+
+      .has-sub > a:after {
+        content: "chevron_right";
+        font-family: "Material Icons";
+        float: right;
+      }
+
+      .content {
+        max-width: 800px;
+        padding: 20px;
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sidenav">
+      <ul>
+        <li class="is-active">
+          <a href="#"><span class="material-icons">home</span>Home</a>
+        </li>
+        <li class="has-sub">
+          <a href="#"><span class="material-icons">article</span>About</a>
+          <ul class="submenu">
+            <li><a href="#">Компанія</a></li>
+            <li class="has-sub">
+              <a href="#">Команда</a>
+              <ul class="submenu">
+                <li><a href="#">Розробники</a></li>
+                <li class="has-sub">
+                  <a href="#">Дизайнери</a>
+                  <ul class="submenu">
+                    <li><a href="#">UI</a></li>
+                    <li><a href="#">UX</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="has-sub">
+          <a href="#"><span class="material-icons">coffee</span>Work With Me</a>
+          <ul class="submenu">
+            <li><a href="#">Проєкти</a></li>
+            <li><a href="#">Ціни</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#"><span class="material-icons">mail</span>Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h1>Вертикальна навігація</h1>
+      <p>
+        Бічна панель закріплена на повну висоту вікна. Наведіть курсор на пункти
+        About та Work With Me, щоб побачити вкладені списки (три рівні).
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </div>
+  </body>
+</html>
