@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання 5 — погодна картка</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 40px 20px;
+        background-color: #eee;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .scene {
+        position: relative;
+        width: 560px;
+        height: 420px;
+        margin: 0 auto;
+        background: linear-gradient(#c9c9c9, #a9a9a9);
+        overflow: hidden;
+      }
+
+      .card {
+        position: absolute;
+        left: 60px;
+        top: 0;
+        width: 340px;
+        height: 330px;
+        background-color: #000;
+        z-index: 2;
+      }
+
+      .temp {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        font-size: 130px;
+        font-weight: 700;
+        line-height: 1;
+        color: #bdbdbd;
+      }
+
+      .cloud {
+        position: absolute;
+        left: 130px;
+        top: 50px;
+        width: 330px;
+        height: 170px;
+        z-index: 3;
+      }
+
+      .puff {
+        position: absolute;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 28px 18px rgba(255, 255, 255, 0.85);
+        opacity: 0.92;
+      }
+
+      .puff-1 {
+        left: 110px;
+        top: 10px;
+        width: 120px;
+        height: 70px;
+      }
+      .puff-2 {
+        left: 40px;
+        top: 50px;
+        width: 150px;
+        height: 70px;
+      }
+      .puff-3 {
+        left: 180px;
+        top: 40px;
+        width: 130px;
+        height: 70px;
+      }
+      .puff-4 {
+        left: 90px;
+        top: 85px;
+        width: 110px;
+        height: 45px;
+        opacity: 0.6;
+      }
+
+      .arrows {
+        position: absolute;
+        left: 0;
+        top: 100px;
+        width: 112px;
+        height: 44px;
+        background-color: #000;
+        opacity: 0.45;
+        z-index: 4;
+        display: flex;
+        font-size: 42px;
+        line-height: 44px;
+        color: #fff;
+        text-align: center;
+      }
+
+      .arrows span {
+        flex: 1;
+      }
+
+      .arrows span:last-child {
+        background-color: rgba(255, 255, 255, 0.3);
+      }
+
+      .arrows:hover {
+        opacity: 0.8;
+      }
+
+      .forecast {
+        position: absolute;
+        left: 200px;
+        top: 270px;
+        box-sizing: border-box;
+        width: 330px;
+        height: 120px;
+        padding: 52px 18px 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #e4e4e4;
+        box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.35);
+        z-index: 1;
+      }
+
+      .day {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .day small {
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        opacity: 0.35;
+      }
+
+      .day-mark {
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scene">
+      <div class="card">
+        <div class="temp">17</div>
+      </div>
+
+      <div class="cloud">
+        <div class="puff puff-1"></div>
+        <div class="puff puff-2"></div>
+        <div class="puff puff-3"></div>
+        <div class="puff puff-4"></div>
+      </div>
+
+      <div class="arrows">
+        <span>←</span>
+        <span>→</span>
+      </div>
+
+      <div class="forecast">
+        <div class="day"><small>Mon</small>17°</div>
+        <div class="day"><small>Tue</small>19°</div>
+        <div class="day"><small>Wed</small>16°</div>
+        <div class="day"><small>Thu</small>18°</div>
+        <div class="day"><small>Fri</small>21°</div>
+      </div>
+    </div>
+  </body>
+</html>
