@@ -1,0 +1,113 @@
+:root {
+  --cols: 3;
+  --gap: 16px;
+  --featured-span: 2;
+  --title-lines: 2;
+  --text-lines: 3;
+  --card-bg: #fff;
+  --card-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  --btn-bg: #808080;
+  --btn-bg-hover: #5e5e5e;
+  --page-bg: #f2f2f2;
+}
+
+.page {
+  padding: 20px;
+  background-color: var(--page-bg);
+  font-family: Georgia, "Times New Roman", serif;
+  color: #222;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: var(--gap);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card--featured {
+  grid-column: span var(--featured-span);
+  --text-lines: 5;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: 16px 16px 12px;
+}
+
+.card__title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--title-lines);
+  line-clamp: var(--title-lines);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.card__text {
+  font-size: 14px;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--text-lines);
+  line-clamp: var(--text-lines);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.card__btn {
+  display: block;
+  margin: 0 16px 16px;
+  padding: 8px 10px;
+  background-color: var(--btn-bg);
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.card__btn:hover,
+.card__btn:focus-visible {
+  background-color: var(--btn-bg-hover);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cols: 2;
+    --gap: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --cols: 1;
+    --gap: 8px;
+    --featured-span: 1;
+    --text-lines: 4;
+  }
+
+  .card--featured {
+    --text-lines: 4;
+  }
+}
